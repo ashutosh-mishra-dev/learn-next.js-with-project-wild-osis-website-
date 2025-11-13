@@ -67,6 +67,7 @@ function MenuItem({ pizza }) {
 const server = createServer((req, res) => {
   const pathName = parse(req.url, true).pathname;
   const htmlTemplate = readFileSync(`${__dirname}/index.html`, "utf-8");
+  const clientJS = readFileSync(`${__dirname}/client.js`, "utf-8");
 
   if (pathName === "/") {
     const renderedReact = renderToString(<Home />);
@@ -81,6 +82,9 @@ const server = createServer((req, res) => {
     //res.end(htmlTemplate);
   } else if (pathName === "/test") {
     res.end("Response from server Test");
+  } else if (pathName === "/client.js") {
+    res.writeHead(200, { "content-type": "application/javascript" });
+    res.end(clientJS);
   } else {
     res.end("The URL can't be Found.");
   }
