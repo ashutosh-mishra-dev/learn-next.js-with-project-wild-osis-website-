@@ -1,7 +1,7 @@
 function page() {
   return (
     <div>
-      <h1>helow next</h1>
+      <h1>The Wild Osis. Welcome to paradies.</h1>
     </div>
   );
 }
