@@ -1,0 +1,12 @@
+
+git add .
+git commit -m "Section 32 : Overview of Next.js With the "App" Router : text"
+git push
+
+//---------------------------------- next.js -----------------------------------------------
+
+git add .
+git commit -m "Section 32 : Overview of Next.js With the "App" Router :Creating A Layout | yha hamne layout ko create kiya sath hamne apne project ke folder ko set kiya matlab mannual ssr ke folder ko delete kar diya "
+git push
+
+//------------------------------------------------------------------------------------------

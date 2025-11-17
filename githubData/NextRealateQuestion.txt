@@ -1,0 +1,18 @@
+
+👉 Next.js me folder structure kya hota hai?
+
+👉 App Router kya hai?
+
+👉 Server Components vs Client Components difference kya hai?
+
+👉 Data fetching (SSR/SSG/ISR) simple example ke sath?
+
+👉 Turbopack Default Bundler Next.js 16 me kya h ?
+
+👉 New cache APIs updateTag() kya h ? 
+
+👉 Next.js DevTools MCP kya h kaise use hota h ?
+
+👉 
+
+👉 
