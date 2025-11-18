@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 33 : Starting to Build the Wild Osis Website : styling with Tailwind css"
+git commit -m "Section 33 : Starting to Build the Wild Osis Website : Adding page metadata and favicon "
 git push
 
 //------------------------------------------------------------------------------------------

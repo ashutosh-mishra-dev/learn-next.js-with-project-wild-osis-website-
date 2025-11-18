@@ -3,7 +3,12 @@ import Navigation from "@/app/_component/Navigation";
 
 import "@/app/_styles/globals.css";
 
-export const metadata = { title: "The Wild Osis" };
+export const metadata = {
+  //title: "The Wild Osis"
+  title: { template: "%s / The Wild Osis", default: "Welcome / The Wild Osis" },
+  description:
+    "Luxurious cabin hotel, located in the heart of Italian Dolomites, surrounded by beautiful mauntains and dark forests",
+};
 
 export default function RootLayout({ children }) {
   return (
