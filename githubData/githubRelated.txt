@@ -1,12 +1,12 @@
 
 git add .
-git commit -m "Section 32 : Overview of Next.js With the "App" Router : text"
+git commit -m "Section 33 : Starting to Build the "Wild Osis" Website : Text here"
 git push
 
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 32 : Overview of Next.js With the "App" Router : Displaying a loading indicator"
+git commit -m "Section 33 : Starting to Build the "Wild Osis" Website : Project organization"
 git push
 
 //------------------------------------------------------------------------------------------
