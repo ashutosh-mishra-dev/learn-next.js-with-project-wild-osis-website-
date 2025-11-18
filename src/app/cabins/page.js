@@ -1,3 +1,5 @@
+import Counter from "../component/Counter";
+
 export default async function Page() {
   // ye ek server component hai kyuki next.js me by default jitne bhi component bante hai vo server component hote h
   // aur yha ham direct  data fetch kar rhe hai bina useEffect ya kisi third party library ke.
@@ -13,6 +15,9 @@ export default async function Page() {
           <li key={user.id}>{user.name}</li>
         ))}
       </ul>
+      {/* ab ham yha server component se client component me data send kar rhe hai
+      props ke through, esi props ko "server - client bridge" bola jata hai  */}
+      <Counter users={data} />
     </div>
   );
 }
