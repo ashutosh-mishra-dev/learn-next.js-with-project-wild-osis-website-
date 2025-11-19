@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 33 : Starting to Build the Wild Osis Website : Building the Home page"
+git commit -m "Section 33 : Starting to Build the Wild Osis Website : Building the About page With Responsive Images"
 git push
 
 //------------------------------------------------------------------------------------------
