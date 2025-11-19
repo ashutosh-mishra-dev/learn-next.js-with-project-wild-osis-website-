@@ -6,8 +6,10 @@
 // most important sare componet aur sare route ke liye kaam karega chahe jitna deep route ya componet ho sab
 //  ke liye automatic loading show hoga ex //http://localhost:3000/cabins/showCabin/123
 
+import Spinner from "@/app/_component/Spinner";
+
 function Loading() {
-  return <p>LOADING DATA...</p>;
+  return <Spinner />;
 }
 
 export default Loading;
