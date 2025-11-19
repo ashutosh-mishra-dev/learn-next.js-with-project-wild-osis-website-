@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 33 : Starting to Build the Wild Osis Website : Adding Nested Routes and pages"
+git commit -m "Section 33 : Starting to Build the Wild Osis Website : (final section) Adding Nested Layout"
 git push
 
 //------------------------------------------------------------------------------------------
