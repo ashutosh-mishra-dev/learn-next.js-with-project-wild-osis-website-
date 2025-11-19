@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 34 : Data feching, Caching, and Rendering : setting up supabase"
+git commit -m "Section 34 : Data feching, Caching, and Rendering : fetching and displaying cabin list"
 git push
 
 //------------------------------------------------------------------------------------------

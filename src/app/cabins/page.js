@@ -1,12 +1,14 @@
 import CabinCard from "@/app/_component/CabinCard";
+import { getCabins } from "../_lib/data-service";
 
 export const metadata = {
   title: "Cabin",
 };
 
-export default function Page() {
-  // CHANGE
-  const cabins = [];
+export default async function Page() {
+  //here came cabin data from server
+  // yha ham server component me kaam kar rhe hai to hame kisi bhi prakar ka thirparty library ya useEffect ka use karne ki jarurat nhi
+  const cabins = await getCabins();
 
   return (
     <div>
