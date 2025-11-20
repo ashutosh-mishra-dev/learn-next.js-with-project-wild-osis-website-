@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 34 : Data feching, Caching, and Rendering : Streaming UI with suspense : cabin list"
+git commit -m "Section 34 : Data feching, Caching, and Rendering : Dynamic route segment : building the cabin page"
 git push
 
 //------------------------------------------------------------------------------------------
