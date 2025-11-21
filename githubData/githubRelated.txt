@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 34 : Data feching, Caching, and Rendering : Error Handling : Not Found error"
+git commit -m "Section 34 : Data feching, Caching, and Rendering : Making Dynamic Pages static with generateStaticParams"
 git push
 
 //------------------------------------------------------------------------------------------

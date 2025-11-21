@@ -1,5 +1,6 @@
 import SelectCountry from "@/app/_component/SelectCountry";
 
+export const dynamic = "force-dynamic";
 export const metadata = { title: "Update Profile" };
 export default function Page() {
   // CHANGE
