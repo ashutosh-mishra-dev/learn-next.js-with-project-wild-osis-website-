@@ -2,6 +2,34 @@ import { getCabin } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 
+// ------------- static metaData -----------------
+// export const metadata = {
+//   title: "single Cabins",
+//   description: "List of all resort cabins",
+// };
+
+// ------------- dynamic metaData -----------------
+// method 1:
+// export async function generateMetadata({ params }) {
+//   const { cabinId } = await params;
+//   const { name } = await getCabin(cabinId);
+//   return { title: `Cabin ${name}` };
+// }
+
+// method 2:
+export async function generateMetadata({ params }) {
+  const { cabinId } = await params;
+  const cabin = await getCabin(cabinId);
+
+  return {
+    title: `${cabin.name} | Cabin Details`,
+    openGraph: {
+      title: cabin.name,
+      description: cabin.description,
+    },
+  };
+}
+
 export default async function Page({ params }) {
   //const cabin = await getCabin(params.cabinId); aap aisa direct use nhi kar sakte
 
