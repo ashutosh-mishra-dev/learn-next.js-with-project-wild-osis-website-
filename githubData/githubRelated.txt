@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 34 : Data feching, Caching, and Rendering :generating dynamic Metadata"
+git commit -m "Section 34 : Data feching, Caching, and Rendering : Error Handling : setting up error boundaries"
 git push
 
 //------------------------------------------------------------------------------------------

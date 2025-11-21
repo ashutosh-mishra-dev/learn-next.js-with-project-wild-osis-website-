@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: cabin.name,
       description: cabin.description,
+      images: [cabin.image],
     },
   };
 }
