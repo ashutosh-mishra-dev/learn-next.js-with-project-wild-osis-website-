@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 34 : Data feching, Caching, and Rendering : Making Dynamic Pages static with generateStaticParams"
+git commit -m "Section 34 : Data feching, Caching, and Rendering : static site generation (SSG)"
 git push
 
 //------------------------------------------------------------------------------------------
