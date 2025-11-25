@@ -4,6 +4,7 @@ import Link from "next/link";
 import logo from "../../../public/logo.png";
 
 function Logo() {
+  console.log("LOGO"); //here checking server componet and client component
   return (
     <Link href="/" className="flex items-center gap-4 z-10">
       <Image
