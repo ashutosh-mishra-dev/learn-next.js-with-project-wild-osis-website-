@@ -4,7 +4,6 @@ import image2 from "@/assets/about-2.jpg";
 import { getCabins } from "../_lib/data-service";
 import Link from "next/link";
 
-export const validate = 86400; // manage cache for 1 day
 export const metadata = {
   title: "About",
 };

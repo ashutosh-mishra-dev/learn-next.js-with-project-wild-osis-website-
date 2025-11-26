@@ -1,6 +1,7 @@
 import { Suspense } from "react";
-import CabinList from "../_component/CabinList";
-import Spinner from "../_component/Spinner";
+import CabinList from "@/app/_component/CabinList";
+import Spinner from "@/app/_component/Spinner";
+import Filter from "@/app/_component/Filter";
 
 //--------- route level cache manage:  -----
 // export const revalidate = 0;  // yha cache me data jayega hi nhi direct data changes dikhega
@@ -10,7 +11,10 @@ export const metadata = {
   title: "Cabin",
 };
 
-export default function Page() {
+export default async function Page({ searchParams }) {
+  const paramValue = await searchParams;
+  const filter = paramValue?.capacity ?? "all";
+
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -24,10 +28,15 @@ export default function Page() {
         home away from home. The perfect spot for a peaceful, calm vacation.
         Welcome to ashutosh mishra.
       </p>
+      <div className="flex justify-end mb-8">
+        <Filter />
+      </div>
 
       {/* yha suspense ke andar jo bhi data aayega vhi loading me jayega baki ka upar ya suspense ke bad ka data show hoga as static  */}
-      <Suspense fallback={<Spinner />}>
-        <CabinList />
+      {/* ab yha key nahi agayenge to jo hamne spinner lagaya h vo filter ke click
+        pr render nhi hoga becouse CabinList ka fresh instance create nahi hoga */}
+      <Suspense fallback={<Spinner />} key={filter}>
+        <CabinList filter={filter} />
       </Suspense>
     </div>
   );
