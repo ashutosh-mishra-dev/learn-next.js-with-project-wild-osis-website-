@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 35 : Client and Server Interactions : client components in server component"
+git commit -m "Section 35 : Client and Server Interactions : Highlighting Current side Navigation Link"
 git push
 
 //------------------------------------------------------------------------------------------
