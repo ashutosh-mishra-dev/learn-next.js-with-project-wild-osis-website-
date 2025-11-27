@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import CabinList from "@/app/_component/CabinList";
 import Spinner from "@/app/_component/Spinner";
 import Filter from "@/app/_component/Filter";
+import ReservationReminder from "../_component/ReservationReminder";
 
 //--------- route level cache manage:  -----
 // export const revalidate = 0;  // yha cache me data jayega hi nhi direct data changes dikhega
@@ -37,6 +38,7 @@ export default async function Page({ searchParams }) {
         pr render nhi hoga becouse CabinList ka fresh instance create nahi hoga */}
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );

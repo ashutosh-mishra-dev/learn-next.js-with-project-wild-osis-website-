@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 35 : Client and Server Interactions : data fetching strategies for the reservation section"
+git commit -m "Section 35 : Client and Server Interactions : Using the Context Api for State Management"
 git push
 
 //------------------------------------------------------------------------------------------

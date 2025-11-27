@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { isWithinInterval } from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import { useReservation } from "./ReservationContext";
 
 function isAlreadyBooked(range, datesArr) {
   return (
@@ -17,8 +17,8 @@ function isAlreadyBooked(range, datesArr) {
 
 function DateSelector({ settings, bookedDate, cabin }) {
   // Local state (range)
-  const [range, setRange] = useState({ from: undefined, to: undefined });
-
+  const { range, setRange } = useReservation();
+  console.log("range : ", range);
   // CHANGE
   const regularPrice = 23;
   const discount = 23;
@@ -41,6 +41,9 @@ function DateSelector({ settings, bookedDate, cabin }) {
         selected={range}
         onSelect={setRange}
         numberOfMonths={2}
+        endMonth={
+          new Date(new Date().setFullYear(new Date().getFullYear() + 5))
+        }
         defaultMonth={new Date()}
         captionLayout="dropdown"
         disabled={[
