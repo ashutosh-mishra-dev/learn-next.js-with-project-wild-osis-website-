@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 35 : Client and Server Interactions : Using the Context Api for State Management"
+git commit -m "Section 35 : Client and Server Interactions : Creating an API Endpoint With Route Handlers"
 git push
 
 //------------------------------------------------------------------------------------------
