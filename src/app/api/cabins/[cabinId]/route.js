@@ -11,6 +11,6 @@ export async function GET(request, { params }) {
 
     return Response.json({ cabin, bookedDate });
   } catch {
-    return Response.json({ message: "Cabin not Found" });
+    return Response.json({ message: "Cabin not Found" }, { status: 404 });
   }
 }
