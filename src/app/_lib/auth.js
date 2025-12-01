@@ -26,6 +26,8 @@ import Google from "next-auth/providers/google";
 // });
 
 //ex2: version 5 me chalega
+
+//Auth setup :
 const authConfig = {
   providers: [
     Google({
@@ -33,18 +35,20 @@ const authConfig = {
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
+  //callback kaam hai:Route ko access karne se pehle check karo user logged-in hai ya nahi
   callbacks: {
     authorized({ auth, request }) {
       return !!auth?.user;
     },
   },
 
+  // pages me ham  Default NextAuth sign-in page mat dikhana Mera khud ka /login page use karna
   pages: { signIn: "/login" },
 };
 
 export const {
-  auth,
-  signIn,
+  auth, //esse yaha se direct session milta hai (no need for getServerSession).
+  signIn, //Login trigger karne ke liye
   signOut,
   handlers: { GET, POST },
 } = NextAuth(authConfig);

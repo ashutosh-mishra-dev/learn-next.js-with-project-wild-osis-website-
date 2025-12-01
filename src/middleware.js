@@ -13,8 +13,18 @@ export function middleware(request) {
 
 */
 
-export const middleware = auth;
-export const config = { matcher: ["/account"] };
+export const middleware = auth; //Ye check karta hai ki user logged-in hai ya nahi.
+export const config = { matcher: ["/account"] }; //Only /account route protected hoga. Agar koi user login nahi hai aur /account khole → login page pr redirect hoga
 
 //***** */ most importaint ab next.js 16 me ab middleware kaam nhi karta
 // middleware ki jagah proxy use hota h.
+
+// Ye middleware ONLY works on deployment
+
+// Vercel
+
+// Netlify
+
+// Cloudflare
+
+// Render

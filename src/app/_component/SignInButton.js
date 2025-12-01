@@ -1,6 +1,19 @@
 import { signInAction } from "@/app/_lib/actions";
 
-// hamne yha button pr onclick ka use na karke form action ka use kiya beacouse es page ko server component banana tha agar ham onClick ka use karte to ye client componet ban jata
+/*
+hamne yha button pr onclick ka use na karke form action ka use kiya beacouse es page ko server component banana tha agar ham onClick ka use karte to ye client componet ban jata
+
+pura process :
+
+SignInButton → signInAction() → Google Login →
+Google Redirect → /api/auth/callback/google →
+NextAuth session create →
+User goes to /account →
+middleware(auth) checks session →
+Allowed → /account page render
+Denied → redirect to /login
+
+*/
 
 function SignInButton() {
   return (
