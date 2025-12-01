@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 36 : Authentication With NextAuth(AUTH.JS) : geting user session"
+git commit -m "Section 36 : Authentication With NextAuth(AUTH.JS) : Building a custom signin page"
 git push
 
 //------------------------------------------------------------------------------------------

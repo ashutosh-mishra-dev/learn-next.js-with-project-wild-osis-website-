@@ -1,7 +1,12 @@
 import Image from "next/image";
 import bgImage from "@/assets/bg.png";
 import Link from "next/link";
+//import fs from "fs";
+
+export const runtime = "edge"; // by default node js server runtimes
 function page() {
+  // console.log("fs : ", fs); //here we only check default runtime is nodejs or edge runtime
+  console.log("process :", process); // if you using runtime = "edge" the only found ansewer in console env
   return (
     <main className="mt-24">
       <Image

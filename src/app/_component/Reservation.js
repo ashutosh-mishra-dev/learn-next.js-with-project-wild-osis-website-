@@ -11,7 +11,7 @@ async function Reservation({ cabin }) {
   ]);
 
   const session = await auth();
-  console.log(session);
+  //console.log(session);
 
   return (
     <div className="grid grid-cols-2 border border-primary-800 ">
