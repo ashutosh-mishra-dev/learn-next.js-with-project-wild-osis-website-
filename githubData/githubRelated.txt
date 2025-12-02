@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 37 : Mutations With Server Actions + Modern React Hooks : text"
+git commit -m "Section 37 : Mutations With Server Actions + Modern React Hooks  : Updating profile using server action (last commit name update only)"
 git push
 
 
