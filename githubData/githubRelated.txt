@@ -1,12 +1,12 @@
 
 git add .
-git commit -m "Section 36 : Authentication With NextAuth(AUTH.JS) : Text"
+git commit -m "Section 36 : Authentication With NextAuth(AUTH.JS)  : text"
 git push
 
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 36 : Authentication With NextAuth(AUTH.JS) : Building a custom signout page (oldway next.js 14 usinge middleware )"
+git commit -m "Section 36 : Authentication With NextAuth(AUTH.JS) : Creating new Guest on first signIn and END THIS SECTION" 
 git push
 
 //------------------------------------------------------------------------------------------
