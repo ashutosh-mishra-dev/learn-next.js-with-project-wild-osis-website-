@@ -34,6 +34,9 @@ export async function updateGuest(formData) {
 
   const updateData = { nationality, countryFlag, nationalID };
 
+  // delay 2s
+  //await new Promise((res) => setTimeout(res, 2000));
+
   const { data, error } = await supabase
     .from("guests")
     .update(updateData)
