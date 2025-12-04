@@ -3,11 +3,21 @@
 import { useState } from "react";
 import { updateGuest } from "../_lib/actions";
 import { useFormStatus } from "react-dom";
+//import { useRouter } from "next/navigation";
 
 function UpdateProfileForm({ guest, children }) {
   const [count, setCount] = useState();
 
   const { fullName, email, nationality, nationalID, countryFlag } = guest;
+
+  /*
+  // --------------- ye tab jarurat h jab client component ko forcefully render karna ho.------------------------
+  const router = useRouter();
+  async function clientAction(formData) {
+    await updateGuest(formData); // Server Action
+    router.refresh(); // UI refresh
+  }
+*/
 
   return (
     <form

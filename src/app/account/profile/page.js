@@ -9,6 +9,7 @@ export const metadata = { title: "Update Profile" };
 
 export default async function Page() {
   const session = await auth();
+
   const guest = await getGuest(session.user.email);
 
   return (
@@ -24,6 +25,7 @@ export default async function Page() {
 
       <UpdateProfileForm guest={guest}>
         <SelectCountry
+          key={guest.nationality} //most importaint key na pass karne se select me jo country ek step piche jo select kiya tha vo UI me show kar rha tha current country select nhi UI pr aa rha tha database me to save current city ho ja rhi thi
           name="nationality"
           id="nationality"
           className="px-5 py-3 bg-primary-200 text-primary-800 w-full shadow-sm rounded-sm"

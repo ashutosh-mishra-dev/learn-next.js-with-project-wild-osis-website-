@@ -1,0 +1,61 @@
+----------------------- browser se data delete karna jo hacker karte h:--------------------------
+step1:
+hamne yha brawser apne http://localhost:3000/account/reservations project pr gye aur brawser ke network section me chale gye
+phir ek data button ke dwara delete kiya phir jo network section me delete vala page tha use mouse ka right click kr 
+copy me copy as cURL(cmd) copy kar liya ab cmd pr aa kr past kar diya 
+step2:
+ yha jo last me   --data-raw ^"^[7^]^"  eske es bracket me [7^] supabase ke booking table ki id dal diya [121^] bas etna kar ke enter kr diya 
+ pura row delete ho gya booking table se 
+
+curl ^"http://localhost:3000/account/reservations^" ^
+  -H ^"Accept: text/x-component^" ^
+  -H ^"Accept-Language: en-US,en;q=0.9,hi;q=0.8^" ^
+  -H ^"Connection: keep-alive^" ^
+  -H ^"Content-Type: text/plain;charset=UTF-8^" ^
+  -b ^"next-auth.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..uFOOQy6mKKGfbtaC.8AJOUW8SgdBR46wPDtreqfbwF3Cn8UX2H9AwuCSP_rKHMw86n8Spv07SQMzaKcdbQUtEWoor1nB0oMtkoAZwgjXthzC2sVGJR_yEfQzlMAYzPAa-iLr9J9dnt_fa8ZujVQGIwwAYBI8wIxSr0ebQLzhldIv5LbFUL8GSX3s-ephYFfDX0OA5vpYosG9WFpXFPuHQq7aNsF_QL4SX8hFvhKGhuY64p77pCsN3UlH7-E7654gV5q7FFbADx4Rp20YZTvGACxKlPmvsPAoGGWNu-PY0d5AOQthI94IElAOpE2NGfv0H_qr87TPfbVy7OifqdccYYdc5szSqI7A56cx8FWfc7JB-8itaqfXmobcCEa1cSRj1NIjuWih60A.umBufMtRxGcgFq-VU78GcQ; authjs.csrf-token=57f9b522a5afbefecf4a0670065a1cecb15b9a5d69fc707ca862eae332d8b21b^%^7Cc12cf545497ef052ca69253dc485002b80eeddd6a14b1b4f74a71e5fbfe7063a; authjs.callback-url=http^%^3A^%^2F^%^2Flocalhost^%^3A3000; authjs.session-token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwia2lkIjoiNFNHYmVuT25IUnRReXczUUFqUWcwQjdDejY3RkxZcTU3TWdDa0JvRDdwSndPMzZaTWF1SnFDQk5xaG8xTFNoeXVSMTFKNXpwUjByWE1sNWdGNjQzMHcifQ..OauTcrwn8h8VG5qiBHAdgA.gEqHeGv5jlgeMM0JGFNrB5U_AUE946VPl4U6Ad_zxR2T_YqttjA7789Ao7ChHwB5T01eW3Keduzdb6cEgXwV_XPFHD60nmfE-h2z-QH-9fPzaup-os6Fi-sd16nsBbj0cC4OvZt2eE0n-4K_LqDZRE_zpRlQeAU0swjGVw99CAu6Nr47KO4PQhWVecZVL-skjo_UTXTFNCm9bGj6oxlsLgv21hBmzoA2uHv7K1fZ-pfeUKnl3VW6QdMNGjE4WQhgpJb6447IYCfvLXG2Kq5Y1kH_L22Fn0At5lHmRQb72JdSZkHk71Fyk6DUPtCPIXEklZF0VgROSnILlsrmG8ZuP3KW1kCsloBsGdHoejT_4ElVlwAr1nWHox8kZXbZN0QZVQKsA1jU7UPr5tRej8Rn4w.rk7q0H4M8K07IlEOgIaC9cPoKQO7jd4wyq3D4eld5IY; __next_hmr_refresh_hash__=84^" ^
+  -H ^"Origin: http://localhost:3000^" ^
+  -H ^"Referer: http://localhost:3000/account/reservations^" ^
+  -H ^"Sec-Fetch-Dest: empty^" ^
+  -H ^"Sec-Fetch-Mode: cors^" ^
+  -H ^"Sec-Fetch-Site: same-origin^" ^
+  -H ^"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36^" ^
+  -H ^"next-action: 40913e263ba2eb1f7ec663a33d5603205f09aff7e0^" ^
+  -H ^"next-router-state-tree: ^%^5B^%^22^%^22^%^2C^%^7B^%^22children^%^22^%^3A^%^5B^%^22account^%^22^%^2C^%^7B^%^22children^%^22^%^3A^%^5B^%^22reservations^%^22^%^2C^%^7B^%^22children^%^22^%^3A^%^5B^%^22__PAGE__^%^22^%^2C^%^7B^%^7D^%^2Cnull^%^2Cnull^%^5D^%^7D^%^2Cnull^%^2Cnull^%^5D^%^7D^%^2Cnull^%^2Cnull^%^5D^%^7D^%^2Cnull^%^2Cnull^%^2Ctrue^%^5D^" ^
+  -H ^"sec-ch-ua: ^\^"Google Chrome^\^";v=^\^"143^\^", ^\^"Chromium^\^";v=^\^"143^\^", ^\^"Not A(Brand^\^";v=^\^"24^\^"^" ^
+  -H ^"sec-ch-ua-mobile: ?0^" ^
+  -H ^"sec-ch-ua-platform: ^\^"Windows^\^"^" ^
+  -H ^"x-nextjs-html-request-id: h0f1s65zSafzS36mSEOLn^" ^
+  -H ^"x-nextjs-request-id: a9b317cd^" ^
+  --data-raw ^"^[7^]^" 
+
+  
+  ese fix kiya ja sakta h 
+
+  export async function deleteReservation(bookingId) {
+  const session = await auth();
+  if (!session) throw new Error("You must be logged in ");
+
+  //----------------------------------------------------------------------------
+  // protected code becouse browser se koi bhi delete kar sakta tha dekhana h to learn_next project folder ke root me browserDeleteAsHacker file dekho.
+  const guestBookings = await getBookings(session.user.guestId);
+  const guestBookingIds = guestBookings.map((booking) => booking.id); //yha jo guestne book kiya vohi bookings milengi
+
+  if (!guestBookingIds.includes(bookingId))
+    throw new Error("You are not allowed to delete this booking.");
+  //----------------------------------------------------------------------------
+
+  const { error } = await supabase
+    .from("bookings")
+    .delete()
+    .eq("id", bookingId);
+
+  if (error) throw new Error("Booking could not be deleted");
+  revalidatePath("/account/reservations");
+}
+
+jab etna karne ke bad phir same process kiya jo sabse upar diya h to delete nhi hua aur error Mila (Error","message":"You are not allowed to delete this booking.")
+
+:N1764832540069.519
+0:{"a":"$@1","f":"","b":"development"}
+1:D{"time":0.42459999956190586}
+1:E{"digest":"342368444","name":"Error","message":"You are not allowed to delete this booking.","stack":[["deleteReservation","D:\\IT\\YouTube-udemy\\udemy\\react-jonas\\21-learn_nextjs_with_the_wild_osis_website\\.next\\dev\\server\\chunks\\ssr\\_f35576f1._.js",62,53,0,0,false]],"env":"Server","owner":null}

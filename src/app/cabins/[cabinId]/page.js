@@ -20,7 +20,7 @@ import { Suspense } from "react";
 
 // method 2:
 export async function generateMetadata({ params }) {
-  const { cabinId } = await params;
+  const { cabinId } = await params; // most importaint aap ko params ke aage bhi await lagana hi padega.
   const cabin = await getCabin(cabinId);
 
   return {
