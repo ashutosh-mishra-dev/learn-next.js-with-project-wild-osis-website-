@@ -9,7 +9,7 @@ export default async function Page() {
   const session = await auth();
   const id = session.user.guestId;
   const bookings = await getBookings(id);
-  console.log("bookings baba :", bookings);
+
   return (
     <div>
       <h2 className="font-semibold text-2xl text-accent-400 mb-7">
