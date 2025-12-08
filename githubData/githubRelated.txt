@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 37 : Mutations With Server Actions + Modern React Hooks  : Another Loading indicator: The useTransition Hook"
+git commit -m "Section 37 : Mutations With Server Actions + Modern React Hooks  : here we working with 2 lecture => 1.chalenge: Updating Reservation, 2.Removing reservation immediately: The useOptimistic Hook"
 git push
 
 
