@@ -23,6 +23,33 @@ export async function signOutAction() {
   await signOut({ redirectTo: "/" }); // sign out hone ke bad root / route pr chala jayega agar root route pr home page h to vo show karega
 }
 
+//------------------------- es function ka use  src/app/_component/ReservationForm.js ------------------------------
+//*** agar aap bind() method ka use karke data la rheh hai (jaise ko=i hamne ReservationForm.js component me bind ka use kiya h form action me ) to hamesha ek bat ka dhyan rhe ki formData second position hoga aur bind wala method fist place pr hoga
+export async function createBooking(bookingData, formData) {
+  //  console.log("formData : ", formData);
+  const session = await auth();
+  if (!session) throw new Error("You Must be logged in");
+
+  const newBooking = {
+    ...bookingData,
+    guestId: session.user.guestId,
+    numGuests: Number(formData.get("numGuests")),
+    observations: formData.get("observations").slice(0, 1000),
+    extrasPrice: 0,
+    tatalPrice: bookingData.cabinPrice,
+    isPaid: false,
+    hasBreakfast: false,
+    status: "unconfirmed",
+  };
+  //console.log("newBooking : ", newBooking);
+  const { error } = await supabase.from("bookings").insert([newBooking]);
+  if (error) throw new Error("Booking could not be created");
+
+  revalidatePath(`/cabins/${bookingData.cabinId}`); // yha esne cache clear kar diya matlab booking hone ke bad date disable nhi ho rha tha to hone lga
+
+  redirect("/cabins/thankyou"); //thankyou route pr jayega
+}
+
 //------------------------- es function ka use  src/app/_component/UpdateProfileForm.js ------------------------------
 export async function updateGuest(formData) {
   const session = await auth();
@@ -74,8 +101,8 @@ export async function updateGuest(formData) {
 // --------------------------------------------------------------------------------------------------------------
 
 // es function ka use  src/app/_component/UpdateProfileForm.js
-export async function deleteReservation(bookingId) {
-  await new Promise((res) => setTimeout(res, 3000)); //yha useOptimastic ko check karne ke liye 3s ka delay kar rhe h.
+export async function deleteBooking(bookingId) {
+  //await new Promise((res) => setTimeout(res, 3000)); //yha useOptimastic ko check karne ke liye 3s ka delay kar rhe h.
   //throw new Error(); // yha ham simply check kr rhe hai agar data 3s me delete nhi hota to kya optimistic hook hamara data dubara show karayega ya nhi actually data show 3s ke baad hona chahiye agar successfully delete nhi hota to.
   const session = await auth();
   if (!session) throw new Error("You must be logged in ");

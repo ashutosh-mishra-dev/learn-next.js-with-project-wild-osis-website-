@@ -6,7 +6,7 @@ git push
 //---------------------------------- next.js -----------------------------------------------
 
 git add .
-git commit -m "Section 37 : Mutations With Server Actions + Modern React Hooks  : back to the cabin page : finishing the date selector"
+git commit -m "Section 37 : Mutations With Server Actions + Modern React Hooks  : Creating a New Reservation and this is last lecture for this project"
 git push
 
 

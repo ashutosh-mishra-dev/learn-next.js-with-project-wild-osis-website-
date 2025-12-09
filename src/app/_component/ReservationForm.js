@@ -1,11 +1,35 @@
 "use client";
 
+import { differenceInDays } from "date-fns";
 import { useReservation } from "./ReservationContext";
+import { createBooking } from "../_lib/actions";
+import SubmitButton from "./SubmitButton";
 
 function ReservationForm({ cabin, user }) {
-  const { range } = useReservation(); // context api se data aa rha h
+  const { range, resetRange } = useReservation(); // context api se data aa rha h
   //console.log("ReservationForm : ", range);
-  const { maxCapacity } = cabin;
+  const { maxCapacity, regularPrice, discount, id } = cabin;
+
+  const startDate = range.from;
+  const endDate = range.to;
+  const numNights = differenceInDays(endDate, startDate);
+  const cabinPrice = numNights * (regularPrice - discount);
+
+  //form se hame sirf observations, numGuests hi server action tak send kar pa rhe h ab aur bhi data h jisko server action tak pahuchana h
+  // uske liye 2 tarika h (1: method) hidden field ke throw but ek ya do hidden field send karna ho to ye method sabse best
+  // but yha jyda h to 2nd method se karenge (2: method) ham object ke throw sare data ko ek variable me lenge fir server action
+  // se pr data send karne ke liye data object variable banaya h use bind kar denge server action method se
+
+  const bookingData = {
+    startDate,
+    endDate,
+    numNights,
+    cabinPrice,
+    cabinId: id,
+  };
+
+  // ham yha bind kar rhe h server action ko apne bookinData se
+  const createBookingWithData = createBooking.bind(null, bookingData);
 
   return (
     <div className="scale-[1.01]">
@@ -26,7 +50,14 @@ function ReservationForm({ cabin, user }) {
       {/* <p>
         {String(range.from)} to {String(range.to)}
       </p> */}
-      <form className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col">
+      <form
+        // action={createBooking} // app/_lib/actions.js se aa rha h
+        //action={createBookingWithData}
+        action={async (formData) => {
+          await createBookingWithData(formData);
+          resetRange();
+        }}
+        className="bg-primary-900 py-10 px-16 text-lg flex gap-5 flex-col">
         <div className="space-y-2">
           <label htmlFor="numGuests">How many guests?</label>
           <select
@@ -58,11 +89,13 @@ function ReservationForm({ cabin, user }) {
         </div>
 
         <div className="flex justify-end items-center gap-6">
-          <p className="text-primary-300 text-base">Start by selecting dates</p>
-
-          <button className="bg-accent-500 px-8 py-4 text-primary-800 font-semibold hover:bg-accent-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-            Reserve now
-          </button>
+          {!(startDate && endDate) ? (
+            <p className="text-primary-300 text-base">
+              Start by selecting dates
+            </p>
+          ) : (
+            <SubmitButton pendingLabel="Reserving...">Reserve now</SubmitButton>
+          )}
         </div>
       </form>
     </div>
