@@ -1,6 +1,11 @@
 "use client";
 
-import { isWithinInterval } from "date-fns";
+import {
+  differenceInDays,
+  isPast,
+  isSameDay,
+  isWithinInterval,
+} from "date-fns";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import { useReservation } from "./ReservationContext";
@@ -16,14 +21,14 @@ function isAlreadyBooked(range, datesArr) {
 }
 
 function DateSelector({ settings, bookedDate, cabin }) {
-  // Local state (range)
   const { range, setRange } = useReservation();
-  //console.log("range : ", range);
-  // CHANGE
-  const regularPrice = 23;
-  const discount = 23;
-  const numNights = 23;
-  const cabinPrice = 23;
+
+  const displayRange = isAlreadyBooked(range, bookedDate) ? {} : range; // ye check karenga ki pahle se jo date select agar vo phir se date select ke bich me aa jaye to use empty kar de jo date h usme na jode
+
+  const { regularPrice, discount } = cabin;
+  const numNights = differenceInDays(displayRange.to, displayRange.from); // ye date-fn ka function h jo diffrence nikalega daya ka
+
+  const cabinPrice = numNights * (regularPrice - discount);
 
   // SETTINGS
   const { minBookingLength, maxBookingLength } = settings;
@@ -38,27 +43,19 @@ function DateSelector({ settings, bookedDate, cabin }) {
       <DayPicker
         className="pt-12 place-self-center"
         mode="range"
-        selected={range}
         onSelect={setRange}
+        selected={displayRange}
+        min={minBookingLength + 1}
+        max={maxBookingLength}
         numberOfMonths={2}
         endMonth={
           new Date(new Date().setFullYear(new Date().getFullYear() + 5))
         }
         defaultMonth={new Date()}
         captionLayout="dropdown"
-        disabled={[
-          // 1) Past dates disable
-          {
-            before: new Date(new Date().setHours(0, 0, 0, 0)),
-          },
-
-          // 2) Future 5 years se aage disable
-          {
-            after: new Date(
-              new Date().setFullYear(new Date().getFullYear() + 5)
-            ),
-          },
-        ]}
+        disabled={(curDate) =>
+          isPast(curDate) || bookedDate.some((date) => isSameDay(date, curDate))
+        }
       />
 
       <div className="flex items-center justify-between px-8 bg-accent-500 text-primary-800 h-[72px]">
